@@ -1,42 +1,60 @@
 <section>
-  <div class="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 ">
-    <div class="mr-auto place-self-center lg:col-span-7">
-      <h1
-        class="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-[#330656]">
-        "Potencia el Crecimiento de Tu Hijo con <span class="text-[#FF5693]">Brillaré"</span>
-      </h1>
-      <p class="max-w-2xl mb-6 font-light text-black lg:mb-8 md:text-lg lg:text-xl">Cada niño es único, por eso
-        ofrecemos terapias personalizadas que se adaptan a sus necesidades y promueven su bienestar integral.</p>
-      <a href="#"
-        class="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-medium text-center bg-[#FF8A00] text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900">
-        Agenda tu cita
-        <svg class="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <path fill-rule="evenodd"
-            d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-            clip-rule="evenodd"></path>
-        </svg>
-      </a>
-      <a href="#"
-        class="inline-flex items-center px-5 py-3 text-base font-medium text-gray-900 border border-[#FF8A00] rounded-lg hover:bg-white focus:ring-4 focus:ring-gray-100 ">
-        Descargar Brouchure
-        <img class="w-5 h-5 ml-2" src="https://img.icons8.com/windows/32/download--v1.png" alt="download" />
-      </a>
+  <div class="container flex flex-col mx-auto px-2 ">
+    <div class="grid w-full grid-cols-1 my-auto mt-12 mb-8 md:grid-cols-2 xl:gap-14 md:gap-5">
+      <div class="flex flex-col justify-center col-span-1 text-center lg:text-start">
+        <div class="flex items-center justify-center mb-4 lg:justify-normal">
+          <img class="h-5"
+            src="https://raw.githubusercontent.com/Loopple/loopple-public-assets/main/motion-tailwind/img/logos/logo-1.png"
+            alt="logo">
+          <h4 class="ml-2 text-sm font-bold tracking-widest text-primary uppercase">Explore the Latest Tailwind Template
+          </h4>
+        </div>
+        <h1 class="mb-8 text-4xl font-extrabold leading-tight lg:text-6xl" style="color: #330656;">
+          Potencia el Crecimiento de Tu Hijo con <span style="color: #FF5693;">Brillaré</span>
+        </h1>
+        <p class="text-[#2C1F35] mb-6 text-base font-normal leading-7 lg:w-3/4 text-grey-900">
+          Cada niño es único, por eso ofrecemos terapias personalizadas que se adaptan a sus necesidades y promueven su
+          bienestar integral.
+        </p>
+        <div class="mt-10 flex flex-col items-center md:flex-row ">
+          <a href="/contact"
+            class="mb-3 inline-flex h-12 w-full items-center justify-center rounded bg-[#FF8A00] px-6 font-medium tracking-wide text-white shadow-md transition hover:bg-blue-800 focus:outline-none md:mr-4 md:mb-0 md:w-auto">
+            Contacto
+          </a>
+          <a href="/" aria-label=""
+            class="group inline-flex items-center font-semibold text-sm border border-[#FF8A00] h-12 w-full justify-center rounded px-6 py-3 md:w-auto">
+            Descargar Brouchure
+            <svg xmlns="http://www.w3.org/2000/svg" class="ml-4 h-6 w-6 transition-transform group-hover:translate-x-2"
+              fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+            </svg>
+          </a>
+        </div>
 
-    </div>
-    <div class="hidden lg:mt-0 lg:col-span-5 lg:flex ">
-      <img class="" src="img/image1.png" alt="sidrome-down">
+
+      </div>
+      <div class="items-center justify-end hidden col-span-1 md:flex">
+        <img class="w-5/5 rounded-md" src="img/portada.png" alt="header image">
+      </div>
+
+      <div class="flex items-center justify-center col-span-1 mt-10 md:hidden">
+        <img class="w-full rounded-full" src="img/portada2.png" alt="Imagen móvil">
+      </div>
     </div>
   </div>
+
+
+
   <div class="flex flex-col items-center pb-10">
     <h2 class="mb-10 text-lg font-bold text-gray-700">Síguenos en:</h2>
     <div class="flex gap-10">
       <img width="30" height="30" src="img/instagram1.png" alt="instagram-new" />
       <img width="30" height="30" src="img/facebook1.png" alt="facebook" />
       <img width="30" height="30" src="img/tik-tok1.png" alt="tiktok--v1" />
-
     </div>
   </div>
 </section>
+
 
 <hr class="border-t-2 border-gray-300 my-6">
 
@@ -292,14 +310,33 @@
 
         <!-- Segunda mitad (color blanco con formulario) -->
         <div class="bg-[#220F48] p-12 h-full text-gray-700">
-          <form class="space-y-6 ">
-            <input type='text' placeholder='Nombre y Apellido'
-              class="bg-white w-full rounded-full py-3 px-4  text-sm" />
-            <input type='text' placeholder='Distrito' class="bg-white w-full rounded-full py-3 px-4  text-sm" />
-            <input type='email' placeholder='Email' class="bg-white w-full rounded-full py-3 px-4  text-sm" />
-            <button type='button'
-              class="text-white bg-[#FF5693] hover:bg-[#eb397a] font-semibold rounded-full text-sm px-4 py-3 w-full transition-colors">Send</button>
+          <form action="https://formsubmit.co/pierofernandezz48@gmail.com" method="POST" target="dummyframe"
+            (submit)="showConfirmation()" class="space-y-6"> 
+            
+            <input type='text' name="nombre"
+              placeholder='Nombre y Apellido' class="bg-white w-full rounded-full py-3 px-4  text-sm" required />
+
+            <input type='text' name="distrito" placeholder='Distrito'
+              class="bg-white w-full rounded-full py-3 px-4  text-sm" required />
+
+            <input type='email' name="email" placeholder='Email' class="bg-white w-full rounded-full py-3 px-4  text-sm"
+              required />
+
+            <!-- Campo oculto opcional para evitar el captcha de FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+
+            <!-- Redirección opcional después de enviar -->
+            <input type="hidden" name="_next" value="about:blank" /> <!-- evita redirección externa -->
+
+            <button type='submit'
+              class="text-white bg-[#FF5693] hover:bg-[#eb397a] font-semibold rounded-full text-sm px-4 py-3 w-full transition-colors">
+              enviar
+            </button>
+
           </form>
+          <iframe name="dummyframe" style="display:none;"></iframe>
+
+
         </div>
       </div>
     </div>
@@ -307,7 +344,7 @@
 </section>
 
 <section>
-  <div class="max-w-screen-xl mx-auto px-5 min-h-screen py-20">
+  <div class="max-w-screen-xl mx-auto px-5 py-20">
     <div class="flex flex-col items-center">
       <h2 class="mb-8 text-4xl tracking-tight font-extrabold text-center text-gray-900 ">Preguntas Frecuentes</h2>
     </div>
@@ -474,93 +511,4 @@
       </div>
     </div>
   </div>
-</section>
-
-
-
-<section>
-  <footer class="relative bg-blue-400 pt-8 pb-6">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-wrap text-left lg:text-left">
-        <div class="w-full lg:w-6/12 px-4">
-          <h4 class="text-3xl font-semibold text-blueGray-700">Let's keep in touch!</h4>
-          <h5 class="text-lg mt-0 mb-2 text-blueGray-600">
-            Find us on any of these platforms, we respond 1-2 business days.
-          </h5>
-          <div class="mt-6 lg:mb-0 mb-6">
-            <button
-              class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button">
-              <i class="fab fa-twitter"></i></button><button
-              class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button">
-              <i class="fab fa-facebook-square"></i></button><button
-              class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button">
-              <i class="fab fa-dribbble"></i></button><button
-              class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2"
-              type="button">
-              <i class="fab fa-github"></i>
-            </button>
-          </div>
-        </div>
-        <div class="w-full lg:w-6/12 px-4">
-          <div class="flex flex-wrap items-top mb-6">
-            <div class="w-full lg:w-4/12 px-4 ml-auto">
-              <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
-                </li>
-              </ul>
-            </div>
-            <div class="w-full lg:w-4/12 px-4">
-              <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
-              <ul class="list-unstyled">
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT
-                    License</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
-                </li>
-                <li>
-                  <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm"
-                    href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <hr class="border-t-2  border-gray-300 my-6">
-      <div class="flex flex-wrap items-center md:justify-between justify-center">
-        <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-          <div class="text-sm text-blueGray-500 font-semibold py-1">
-            Copyright © <span id="get-current-year">2021</span> Notus JS by
-            <a href="https://www.creative-tim.com?ref=njs-profile" class="text-blueGray-500 hover:text-blueGray-800">Creative Tim</a>.
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
 </section>

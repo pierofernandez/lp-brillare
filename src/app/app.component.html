@@ -1,136 +1,215 @@
-<header>
+<nav class="px-4 lg:px-6 py-4 bg-white rounded-3xl mx-4 sm:mx-12 md:mx-20 lg:mx-28 my-4 shadow-2xl">
+  <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
+    <div class="flex items-center justify-between w-full lg:w-auto">
+      <a href="/home" class="flex items-center">
+        <img src="img/logo-brillare.png" class="mr-3 size-12 lg:size-16" alt="Logo Brillaré" />
+        <span class="self-center text-2xl lg:text-3xl font-semibold whitespace-nowrap dark:text-black">Brillaré</span>
+      </a>
 
-  <!-- component -->
-  <nav class="px-4 lg:px-6 py-4 dark:bg-white rounded-3xl mx-4 sm:mx-12 md:mx-20 lg:mx-28 my-4 shadow-2xl">
-    <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
-      <div class="flex items-center justify-between w-full lg:w-auto">
-        <a href="#" class="flex items-center">
-          <img src="img/logo-brillare.png" class="mr-3 size-12 lg:size-16" alt="Logo Brillaré" />
-          <span class="self-center text-2xl lg:text-3xl font-semibold whitespace-nowrap dark:text-black">Brillaré</span>
-        </a>
-
-        <!-- Botón de hamburguesa para móvil -->
-        <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-          </svg>
-        </button>
-      </div>
-
-      <div class="hidden lg:flex justify-between items-center w-full lg:w-auto lg:order-1" id="mobile-menu-2">
-        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-          <li><a href="#" class="block py-2 pr-1 dark:text-[#9D4CDC]">Home</a></li>
-          <li><a href="#" class="block py-2 pr-1 text-[#330656]">Nosotros</a></li>
-
-          <!-- Dropdown Terapias - Versión mejorada -->
-          <li class="relative group">
-            <div class="py-2 pr-1">
-              <a href="#" class="flex items-center text-[#330656]">
-                Terapias <img src="img/fecha-abajo.png" alt="Icono contacto" class="w-2 h-2 ml-2">
-              </a>
-              <ul
-                class="absolute left-0 hidden group-hover:block flex-col bg-white shadow-lg rounded-md mt-0 py-2 w-48 z-50">
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Terapia Individual</a></li>
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Terapia Grupal</a></li>
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Terapia Infantil</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <!-- Dropdown Talleres - Versión mejorada -->
-          <li class="relative group">
-            <div class="py-2 pr-1">
-              <a href="#" class="flex items-center text-[#330656]">
-                Talleres <img src="img/fecha-abajo.png" alt="Icono contacto" class="w-2 h-2 ml-2">
-              </a>
-              <ul
-                class="absolute left-0 hidden group-hover:block flex-col bg-white shadow-lg rounded-md mt-0 py-2 w-48 z-50">
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Taller de Autoestima</a></li>
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Taller de Manejo de Estrés</a>
-                </li>
-                <li><a href="#" class="block px-4 py-2 text-[#330656] hover:bg-gray-200">Taller de Comunicación</a></li>
-              </ul>
-            </div>
-          </li>
-
-          <li><a href="#" class="block py-2 pr-1 text-[#330656]">Materiales</a></li>
-          <li>
-            <a href="#" class="flex items-center py-2 pr-1 text-[#FF8A00]">
-              <img src="img/libreta-contacto.png" alt="Icono contacto" class="w-5 h-5 mr-2">Contacto
-            </a>
-          </li>
-        </ul>
-      </div>
+      <!-- Botón de hamburguesa para móvil -->
+      <button id="menu-toggle" class="lg:hidden text-gray-700 focus:outline-none" (click)="toggleMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
     </div>
+
+    <!-- Menú para desktop -->
+    <div class="hidden lg:flex justify-between items-center w-full lg:w-auto lg:order-1" id="desktop-menu">
+      <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
+        <li><a href="/home" class="block py-2 pr-1 dark:text-[#9D4CDC]" (click)="closeMenu()">Home</a></li>
+        <li><a href="/about" class="block py-2 pr-1 text-[#330656]" (click)="closeMenu()">Nosotros</a></li>
+
+        <!-- Dropdown Terapias -->
+        <li class="relative group">
+          <div class="py-2 pr-1">
+            <a href="/terapias" class="flex items-center text-[#330656]">
+              Terapias <img src="img/fecha-abajo.png" alt="Icono contacto" class="w-2 h-2 ml-2">
+            </a>
+            <ul
+              class="absolute left-0 hidden group-hover:block flex-col bg-white shadow-lg rounded-md mt-0 py-2 w-48 z-50">
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Terapia
+                  Individual</a></li>
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Terapia
+                  Grupal</a></li>
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Terapia
+                  Infantil</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="relative group">
+          <div class="py-2 pr-1">
+            <a href="/talleres" class="flex items-center text-[#330656]">
+              Talleres <img src="img/fecha-abajo.png" alt="Icono contacto" class="w-2 h-2 ml-2">
+            </a>
+            <ul
+              class="absolute left-0 hidden group-hover:block flex-col bg-white shadow-lg rounded-md mt-0 py-2 w-48 z-50">
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Talleres
+                  Individual</a></li>
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Talleres
+                  Grupal</a></li>
+              <li><a href="/terapias/integrales" class="block px-4 py-2 text-[#330656] hover:bg-gray-200"
+                  (click)="closeMenu()">Talleres
+                  Infantil</a></li>
+            </ul>
+          </div>
+        </li>
+
+        <li><a href="/materiales" class="block py-2 pr-1 text-[#330656]" (click)="closeMenu()">Materiales</a></li>
+        <li>
+          <a href="contact" class="flex items-center py-2 pr-1 text-[#FF8A00]" (click)="closeMenu()">
+            <img src="img/libreta-contacto.png" alt="Icono contacto" class="w-5 h-5 mr-2">Contacto
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Menú móvil (slide-in) -->
+  <div id="mobile-menu"
+    class="fixed inset-y-0 right-0 w-64 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50"
+    [class.translate-x-full]="!isMenuOpen" [class.translate-x-0]="isMenuOpen">
+    <div class="flex justify-end p-4">
+      <button id="menu-close" class="text-gray-700 focus:outline-none" (click)="closeMenu()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <ul class="flex flex-col space-y-4 p-6">
+      <li><a href="/home" class="block py-2 text-[#9D4CDC] text-lg" (click)="closeMenu()">Home</a></li>
+      <li><a href="/about" class="block py-2 text-[#330656] text-lg" (click)="closeMenu()">Nosotros</a></li>
+
+      <li>
+        <div class="py-2">
+          <a href="/terapias" class="flex items-center text-[#330656] text-lg"
+            (click)="toggleSubmenu('terapias-submenu', $event)">
+            Terapias <img src="img/fecha-abajo.png" alt="Icono flecha" class="w-2 h-2 ml-2">
+          </a>
+          <ul class="pl-4 mt-2 space-y-2" [class.hidden]="!submenus['terapias-submenu']" id="terapias-submenu">
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Terapia
+                Individual</a></li>
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Terapia
+                Grupal</a></li>
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Terapia
+                Infantil</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li>
+        <div class="py-2">
+          <a href="/talleres" class="flex items-center text-[#330656] text-lg"
+            (click)="toggleSubmenu('talleres-submenu', $event)">
+            Talleres <img src="img/fecha-abajo.png" alt="Icono flecha" class="w-2 h-2 ml-2">
+          </a>
+          <ul class="pl-4 mt-2 space-y-2" [class.hidden]="!submenus['talleres-submenu']" id="talleres-submenu">
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Taller de
+                Autoestima</a></li>
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Taller de Manejo
+                de Estrés</a></li>
+            <li><a href="/terapias/integrales" class="block py-1 text-[#330656]" (click)="closeMenu()">Taller de
+                Comunicación</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li><a href="/materiales" class="block py-2 text-[#330656] text-lg" (click)="closeMenu()">Materiales</a></li>
+      <li>
+        <a href="/contact" class="flex items-center py-2 text-[#FF8A00] text-lg" (click)="closeMenu()">
+          <img src="img/libreta-contacto.png" alt="Icono contacto" class="w-5 h-5 mr-2">Contacto
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
 </nav>
 
-<!-- Menú móvil desplegable -->
-<div id="mobile-menu" class="hidden lg:hidden bg-white rounded-lg shadow-lg mx-4 my-2 p-4">
-  <ul class="space-y-2">
-    <li><a href="#" class="block py-2 px-4 dark:text-[#9D4CDC]">Home</a></li>
-    <li><a href="#" class="block py-2 px-4 text-[#330656]">Nosotros</a></li>
-    
-    <li>
-      <a href="#" class="flex items-center justify-between py-2 px-4 text-[#330656]">
-        Terapias
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </a>
-      <ul class="hidden pl-4 space-y-2 mt-2">
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Terapia Individual</a></li>
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Terapia Grupal</a></li>
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Terapia Infantil</a></li>
-      </ul>
-    </li>
-    
-    <li>
-      <a href="#" class="flex items-center justify-between py-2 px-4 text-[#330656]">
-        Talleres
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-        </svg>
-      </a>
-      <ul class="hidden pl-4 space-y-2 mt-2">
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Taller de Autoestima</a></li>
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Taller de Manejo de Estrés</a></li>
-        <li><a href="#" class="block py-2 px-4 text-[#330656]">Taller de Comunicación</a></li>
-      </ul>
-    </li>
-    
-    <li><a href="#" class="block py-2 px-4 text-[#330656]">Materiales</a></li>
-    <li>
-      <a href="#" class="flex items-center py-2 px-4 text-[#FF8A00]">
-        <img src="img/libreta-contacto.png" alt="Icono contacto" class="w-5 h-5 mr-2">Contacto
-      </a>
-    </li>
-  </ul>
-</div>
-
-<script>
-  // Toggle del menú móvil
-  document.getElementById('menu-toggle').addEventListener('click', function() {
-    const mobileMenu = document.getElementById('mobile-menu');
-    mobileMenu.classList.toggle('hidden');
-  });
-
-  // Toggle de los submenús en móvil
-  document.querySelectorAll('#mobile-menu li > a').forEach(item => {
-    if (item.nextElementSibling && item.nextElementSibling.tagName === 'UL') {
-      item.addEventListener('click', function(e) {
-        e.preventDefault();
-        const submenu = this.nextElementSibling;
-        submenu.classList.toggle('hidden');
-        
-        // Rotar el icono
-        const icon = this.querySelector('svg');
-        if (icon) {
-          icon.classList.toggle('rotate-180');
-        }
-      });
-    }
-  });
-</script>
-
-</header>
 <router-outlet></router-outlet>
+
+<footer class="relative bg-slate-100 pt-8 pb-6">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-wrap text-left lg:text-left">
+      <div class="w-full lg:w-6/12 px-4">
+        <h4 class="text-3xl font-semibold text-slate-700">Let's keep in touch!</h4>
+        <h5 class="text-lg mt-0 mb-2 text-slate-600">
+          Find us on any of these platforms, we respond in 1–2 business days.
+        </h5>
+        <div class="mt-6 lg:mb-0 mb-6 flex">
+          <button class="bg-white text-sky-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-twitter"></i>
+          </button>
+          <button class="bg-white text-sky-600 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-facebook-square"></i>
+          </button>
+          <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-dribbble"></i>
+          </button>
+          <button class="bg-white text-slate-800 shadow-lg font-normal h-10 w-10 flex items-center justify-center rounded-full outline-none focus:outline-none mr-2" type="button">
+            <i class="fab fa-github"></i>
+          </button>
+        </div>
+      </div>
+      <div class="w-full lg:w-6/12 px-4">
+        <div class="flex flex-wrap items-top mb-6">
+          <div class="w-full lg:w-4/12 px-4 ml-auto">
+            <span class="block uppercase text-slate-500 text-sm font-semibold mb-2">Useful Links</span>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full lg:w-4/12 px-4">
+            <span class="block uppercase text-slate-500 text-sm font-semibold mb-2">Other Resources</span>
+            <ul class="list-unstyled">
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+              </li>
+              <li>
+                <a class="text-slate-600 hover:text-slate-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-6 border-slate-300">
+    <div class="flex flex-wrap items-center md:justify-between justify-center">
+      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
+        <div class="text-sm text-slate-500 font-semibold py-1">
+          © <span id="get-current-year">2021</span>
+          <a href="https://www.creative-tim.com/product/notus-js" class="text-slate-500 hover:text-slate-800" target="_blank">
+            Notus JS
+          </a> by
+          <a href="https://www.creative-tim.com?ref=njs-profile" class="text-slate-500 hover:text-slate-800">
+            Creative Tim
+          </a>.
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
